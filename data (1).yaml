@@ -1,0 +1,23 @@
+AWSTemaplateFormateVersion : '2010-09-09'
+Description :'AWS CloudFormatin Template to create s3 bucket'
+
+parameters:
+    EC2Instancetype:
+        description:EC2 instance type
+        Type:string
+        allowedvalues:[t2.nano]
+        default:t2.micro
+    EC2Amid:
+        type:string
+        default:
+        
+resources:
+    mys3bucket:
+        type:AWS::S3::BUCKET
+        DELETIONPOLICY:RETAIN
+        
+        Properties:
+            'bucketname:'demobucket' 
+            TAGS:
+            -key:'teams'
+             values:'team1'
